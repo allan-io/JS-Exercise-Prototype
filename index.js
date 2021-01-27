@@ -54,7 +54,7 @@ Person.prototype.toString = function () {
   return `${this.name}, ${this.age}`
 }
 
-// const allan = new Person("Allan", 34)
+const allan = new Person("Allan", 34)
 // allan.eat("banana")
 // allan.eat('apple')
 // allan.eat('pizza')
@@ -79,7 +79,7 @@ Person.prototype.toString = function () {
 
 function Car(model, mpg) {
   this.model = model,
-  this.mpg = mpg,
+  this.milesPerGallon = mpg,
   this.tank = 0,
   this.odometer = 0
 }
@@ -87,11 +87,11 @@ Car.prototype.fill = function (gallons) {
   this.tank += gallons
 }
 Car.prototype.drive = function (distance) {
-  if (this.tank > Math.round(distance/ this.mpg)) {
-    this.tank -= Math.round(distance / this.mpg)
+  if (this.tank > Math.round(distance/ this.milesPerGallon)) {
+    this.tank -= Math.round(distance / this.milesPerGallon)
     this.odometer += distance
   } else {
-    this.odometer += this.tank * this.mpg
+    this.odometer += this.tank * this.milesPerGallon
     this.tank = 0
     return `I ran out of gas at ${this.odometer} miles!`
   }
@@ -158,9 +158,9 @@ function foo() {
   return 'bar';
 }
 
-// export default{
-//     foo,
-//     Person, 
-//     Car,
-//     Baby
-// }
+export default{
+    foo,
+    Person, 
+    Car,
+    Baby
+}
